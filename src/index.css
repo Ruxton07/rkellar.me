@@ -63,60 +63,84 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Blue “speed lines” between sections (not a snap target) */
+/*
+ * Full-viewport “warp” between sections — faint blue streaks (fast motion / space).
+ * Each divider is a snap target so the effect fills the screen as you scroll through it.
+ */
 .section-divider {
   flex-shrink: 0;
   position: relative;
-  height: 52px;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
-  scroll-snap-align: none;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
   margin: 0;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 12, 20, 0) 0%,
-    rgba(32, 85, 150, 0.14) 48%,
-    rgba(55, 130, 220, 0.22) 50%,
-    rgba(32, 85, 150, 0.14) 52%,
-    rgba(8, 12, 20, 0) 100%
-  );
+  background: radial-gradient(ellipse 85% 90% at 50% 45%, rgba(18, 45, 85, 0.22) 0%, transparent 58%),
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(8, 22, 48, 0.55) 0%, transparent 45%), #04060c;
+}
+
+.section-divider__depth {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(25, 60, 110, 0.12) 0%, transparent 62%);
+  opacity: 0.9;
 }
 
 .section-divider__glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 90% 200% at 50% 50%, rgba(90, 160, 255, 0.14), transparent 62%);
+  background: radial-gradient(ellipse 55% 45% at 50% 48%, rgba(70, 140, 220, 0.07) 0%, transparent 68%);
 }
 
 .section-divider__lines {
   position: absolute;
-  top: -25%;
-  bottom: -25%;
-  left: -15%;
-  right: -15%;
+  top: -30%;
+  bottom: -30%;
+  left: -25%;
+  right: -25%;
+  transform: skewX(-18deg);
+  will-change: transform;
+  opacity: 0.38;
+}
+
+.section-divider__lines--far {
   background-image: repeating-linear-gradient(
     90deg,
     transparent 0,
-    transparent 12px,
-    rgba(130, 190, 255, 0.06) 12px,
-    rgba(150, 210, 255, 0.65) 13px,
-    rgba(120, 185, 255, 0.45) 14px,
-    rgba(130, 190, 255, 0.06) 15px,
-    transparent 15px,
-    transparent 30px
+    transparent 28px,
+    rgba(110, 175, 255, 0.015) 28px,
+    rgba(130, 195, 255, 0.035) 29px,
+    rgba(110, 175, 255, 0.015) 30px,
+    transparent 30px,
+    transparent 64px
   );
-  transform: skewX(-16deg);
-  animation: section-divider-streak 0.58s linear infinite;
-  will-change: transform;
+  animation: section-divider-warp 1.15s linear infinite;
 }
 
-@keyframes section-divider-streak {
+.section-divider__lines--near {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 14px,
+    rgba(120, 185, 255, 0.02) 14px,
+    rgba(150, 210, 255, 0.055) 15px,
+    rgba(125, 190, 255, 0.028) 16px,
+    transparent 16px,
+    transparent 38px
+  );
+  opacity: 0.32;
+  animation: section-divider-warp 0.36s linear infinite;
+}
+
+@keyframes section-divider-warp {
   0% {
-    transform: skewX(-16deg) translate3d(0, 0, 0);
+    transform: skewX(-18deg) translate3d(0, 0, 0);
   }
 
   100% {
-    transform: skewX(-16deg) translate3d(-30px, 0, 0);
+    transform: skewX(-18deg) translate3d(-56px, 0, 0);
   }
 }
 
@@ -332,7 +356,8 @@ body {
     transform: none;
   }
 
-  .section-divider__lines {
+  .section-divider__lines--far,
+  .section-divider__lines--near {
     animation: none;
   }
 }

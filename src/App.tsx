@@ -37,8 +37,10 @@ export default function App() {
             </ResumeSection>
             {i < sections.length - 1 ? (
               <div className="section-divider" aria-hidden="true">
+                <div className="section-divider__depth" />
                 <div className="section-divider__glow" />
-                <div className="section-divider__lines" />
+                <div className="section-divider__lines section-divider__lines--far" />
+                <div className="section-divider__lines section-divider__lines--near" />
               </div>
             ) : null}
           </Fragment>
