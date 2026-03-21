@@ -49,6 +49,8 @@ body {
 
 /* Scroll container: one “screen” per section with snap */
 .page {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   height: 100dvh;
   max-width: 100%;
@@ -59,6 +61,63 @@ body {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Blue “speed lines” between sections (not a snap target) */
+.section-divider {
+  flex-shrink: 0;
+  position: relative;
+  height: 52px;
+  overflow: hidden;
+  scroll-snap-align: none;
+  margin: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 20, 0) 0%,
+    rgba(32, 85, 150, 0.14) 48%,
+    rgba(55, 130, 220, 0.22) 50%,
+    rgba(32, 85, 150, 0.14) 52%,
+    rgba(8, 12, 20, 0) 100%
+  );
+}
+
+.section-divider__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 200% at 50% 50%, rgba(90, 160, 255, 0.14), transparent 62%);
+}
+
+.section-divider__lines {
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: -15%;
+  right: -15%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 12px,
+    rgba(130, 190, 255, 0.06) 12px,
+    rgba(150, 210, 255, 0.65) 13px,
+    rgba(120, 185, 255, 0.45) 14px,
+    rgba(130, 190, 255, 0.06) 15px,
+    transparent 15px,
+    transparent 30px
+  );
+  transform: skewX(-16deg);
+  animation: section-divider-streak 0.58s linear infinite;
+  will-change: transform;
+}
+
+@keyframes section-divider-streak {
+  0% {
+    transform: skewX(-16deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: skewX(-16deg) translate3d(-30px, 0, 0);
+  }
 }
 
 .resume-section {
@@ -271,5 +330,9 @@ body {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+
+  .section-divider__lines {
+    animation: none;
   }
 }
