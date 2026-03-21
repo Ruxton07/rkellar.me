@@ -12,7 +12,7 @@
 *Bachelor of Science in Computer Science* · GPA **4.0**  
 West Lafayette, IN · Aug 2025 – Present
 
-**Activities:** VEXU Robotics, NASA Lunabotics, Purdue ARC Robotics, Ri3D, Purdue FIRST Programs
+**Activities:** VEXU Robotics, Purdue FIRST Programs
 
 ---
 
