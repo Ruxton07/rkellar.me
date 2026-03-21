@@ -27,7 +27,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 html,
@@ -59,7 +59,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -101,7 +101,6 @@ body {
   left: -25%;
   right: -25%;
   transform: skewX(-18deg);
-  will-change: transform;
   opacity: 0.38;
 }
 
@@ -116,7 +115,7 @@ body {
     transparent 30px,
     transparent 64px
   );
-  animation: section-divider-warp 1.15s linear infinite;
+  animation: none;
 }
 
 .section-divider__lines--near {
@@ -131,17 +130,7 @@ body {
     transparent 38px
   );
   opacity: 0.32;
-  animation: section-divider-warp 0.36s linear infinite;
-}
-
-@keyframes section-divider-warp {
-  0% {
-    transform: skewX(-18deg) translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: skewX(-18deg) translate3d(-56px, 0, 0);
-  }
+  animation: none;
 }
 
 .resume-section {
@@ -153,14 +142,9 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 2.5rem max(1.25rem, calc(50vw - 22rem)) 3rem;
-  opacity: 0.45;
-  transform: translateY(18px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-
-.resume-section--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  transition: none;
 }
 
 .resume-section__panel {
