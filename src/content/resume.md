@@ -18,7 +18,7 @@ West Lafayette, IN · Aug 2025 – Present
 
 - **[Reef Incremental](https://github.com/Ruxton07/reef-incremental)**
 
-  Roblox **incremental game** written in **Luau**: fishing, coral and algae progression, sanctuaries, harvesting loops, and client–server systems with persisted progression.
+  Roblox **incremental game** built in **Luau** with a production-minded structure: layered progression and resource loops, modular client–server gameplay, persisted state, and clear separation of concerns—developed with scalable patterns and common Roblox engineering practices in mind.
 
 - **[Living on the Edge](https://github.com/Ruxton07/living-on-the-edge)**
 
