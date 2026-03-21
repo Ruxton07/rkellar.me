@@ -3,9 +3,11 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 type Props = {
   children: ReactNode
   isIntro?: boolean
+  /** Card grid for the Projects section */
+  projects?: boolean
 }
 
-export function ResumeSection({ children, isIntro }: Props) {
+export function ResumeSection({ children, isIntro, projects }: Props) {
   const ref = useRef<HTMLElement>(null)
   const [visible, setVisible] = useState(isIntro ?? false)
 
@@ -26,9 +28,13 @@ export function ResumeSection({ children, isIntro }: Props) {
   return (
     <section
       ref={ref}
-      className={`resume-section${visible ? ' resume-section--visible' : ''}${isIntro ? ' resume-section--intro' : ''}`}
+      className={`resume-section${visible ? ' resume-section--visible' : ''}${isIntro ? ' resume-section--intro' : ''}${projects ? ' resume-section--projects' : ''}`}
     >
-      <div className="resume-section__panel resume">{children}</div>
+      <div
+        className={`resume-section__panel resume${projects ? ' resume--projects-cards' : ''}`}
+      >
+        {children}
+      </div>
     </section>
   )
 }

@@ -25,13 +25,16 @@ const sections = splitResumeSections(resume)
 export default function App() {
   return (
     <div className="page">
-      {sections.map((chunk, i) => (
-        <ResumeSection key={i} isIntro={i === 0}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-            {chunk}
-          </ReactMarkdown>
-        </ResumeSection>
-      ))}
+      {sections.map((chunk, i) => {
+        const isProjects = chunk.trimStart().startsWith('## Projects')
+        return (
+          <ResumeSection key={i} isIntro={i === 0} projects={isProjects}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+              {chunk}
+            </ReactMarkdown>
+          </ResumeSection>
+        )
+      })}
     </div>
   )
 }
