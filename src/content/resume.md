@@ -34,25 +34,6 @@ West Lafayette, IN · Aug 2025 – Present
 
 ---
 
-## Research & projects
-
-### University of Texas at Austin — Research Assistant
-
-Austin, TX · Feb 2024 – Mar 2024
-
-- Worked with UT Professor Dinkeloo; proposed and set up an experiment to measure digestion of plastic by superworms.
-- Studied superworms as a means to process and reduce various types of plastic waste in the environment.
-
-### Duo Games / CTD Studios — Game Developer
-
-May 2023 – Present
-
-- Developed back-end game logic and systems using **Luau** for two tower-defense games on Roblox.
-- Architected key gameplay mechanics (e.g. projectile lead prediction for moving targets) and delegated programming tasks to team members.
-- Scaled games to support **300,000+** monthly active users, optimizing code for improved server-side performance.
-
----
-
 ## Experience
 
 ### FRC Robotics — Electronics & media subteam lead
@@ -88,9 +69,9 @@ Austin, TX · Sep 2023 – May 2025
 
 ### FIRST Robotics — Mentor
 
-Lafayette, IN · Aug 2025 – Present
+West Lafayette, IN · Aug 2025 – Present
 
-- Mentor two FTC teams weekly: engineering, programming, 3D design, and prototyping for high school students.
+- Mentor **FIRST Robotics Competition** team **1646** (FRC): weekly support on engineering, programming, 3D design, and prototyping with high school students.
 
 ---
 
