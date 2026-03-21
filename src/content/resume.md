@@ -32,8 +32,6 @@ West Lafayette, IN · Aug 2025 – Present
 
   PyPI library for **deterministic turtle-style graphics**: animations are **reproducible** from explicit seeds, aimed at teaching and repeatable visual experiments.
 
----
-
 ## Experience
 
 ### FRC Robotics — Electronics & media subteam lead
