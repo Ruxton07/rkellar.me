@@ -5,14 +5,32 @@
 
 ---
 
-## Education
-
 ### Purdue University
 
 *Bachelor of Science in Computer Science* · GPA **4.0**  
 West Lafayette, IN · Aug 2025 – Present
 
 **Activities:** VEXU Robotics, Purdue FIRST Programs
+
+---
+
+## Projects
+
+### [Reef Incremental](https://github.com/Ruxton07/reef-incremental)
+
+Roblox **incremental game** written in **Luau**: fishing, coral and algae progression, sanctuaries, harvesting loops, and client–server systems with persisted progression.
+
+### [Living on the Edge](https://github.com/Ruxton07/living-on-the-edge)
+
+Python **Pygame** simulation of a **2D ecosystem**: creatures move, eat, reproduce, and die by energy; **mutations** evolve traits (speed, size, intelligence) with trade-offs; logging and charts for long-run behavior and research-style analysis.
+
+### [Chainhashing](https://pypi.org/project/chainhashing/)
+
+PyPI library for a **custom array-like datatype** that handles **hash collisions** in a defined way — designed, tested, and released independently with iterative updates from feedback.
+
+### [SeededTurtle](https://pypi.org/project/SeededTurtle/)
+
+PyPI library for **deterministic turtle-style graphics**: animations are **reproducible** from explicit seeds, aimed at teaching and repeatable visual experiments.
 
 ---
 
