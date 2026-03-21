@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import type { Components } from 'react-markdown'
@@ -29,21 +28,11 @@ export default function App() {
       {sections.map((chunk, i) => {
         const isProjects = chunk.trimStart().startsWith('## Projects')
         return (
-          <Fragment key={i}>
-            <ResumeSection isIntro={i === 0} projects={isProjects}>
-              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-                {chunk}
-              </ReactMarkdown>
-            </ResumeSection>
-            {i < sections.length - 1 ? (
-              <div className="section-divider" aria-hidden="true">
-                <div className="section-divider__depth" />
-                <div className="section-divider__glow" />
-                <div className="section-divider__lines section-divider__lines--far" />
-                <div className="section-divider__lines section-divider__lines--near" />
-              </div>
-            ) : null}
-          </Fragment>
+          <ResumeSection key={i} isIntro={i === 0} projects={isProjects}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+              {chunk}
+            </ReactMarkdown>
+          </ResumeSection>
         )
       })}
     </div>
