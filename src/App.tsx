@@ -2,6 +2,8 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import type { Components } from 'react-markdown'
 import resume from './content/resume.md?raw'
+import { splitResumeSections } from './splitResumeSections'
+import { ResumeSection } from './ResumeSection'
 
 const markdownComponents: Components = {
   a: ({ href, children, ...rest }) => {
@@ -18,14 +20,18 @@ const markdownComponents: Components = {
   },
 }
 
+const sections = splitResumeSections(resume)
+
 export default function App() {
   return (
     <div className="page">
-      <article className="resume">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
-          {resume}
-        </ReactMarkdown>
-      </article>
+      {sections.map((chunk, i) => (
+        <ResumeSection key={i} isIntro={i === 0}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+            {chunk}
+          </ReactMarkdown>
+        </ResumeSection>
+      ))}
     </div>
   )
 }

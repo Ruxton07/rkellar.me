@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Inter:wght@500;600;700&display=swap');
 
 :root {
   --bg: #0b0d11;
@@ -26,30 +26,64 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html,
 body {
+  height: 100%;
   margin: 0;
+}
+
+body {
   min-height: 100svh;
   background: radial-gradient(1200px 600px at 10% -10%, #1a2234 0%, transparent 55%),
     radial-gradient(900px 500px at 100% 0%, #152028 0%, transparent 50%), var(--bg);
 }
 
 #root {
-  min-height: 100svh;
+  height: 100%;
+  min-height: 100%;
 }
 
+/* Scroll container: one “screen” per section with snap */
 .page {
+  height: 100vh;
+  height: 100dvh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.resume-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem max(1.25rem, calc(50vw - 22rem)) 3rem;
+  opacity: 0.45;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.resume-section--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.resume-section__panel {
+  width: 100%;
   max-width: 44rem;
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-}
-
-@media (max-width: 520px) {
-  .page {
-    padding: 2rem 1.15rem 3rem;
-  }
-}
-
-.resume {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -58,19 +92,24 @@ body {
 }
 
 @media (max-width: 520px) {
-  .resume {
+  .resume-section {
+    padding: 1.75rem 1.15rem 2.25rem;
+  }
+
+  .resume-section__panel {
     padding: 1.5rem 1.25rem 1.75rem;
     border-radius: 12px;
   }
 }
 
-.resume h1 {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: clamp(2.1rem, 5vw, 2.75rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+/* Name: modern geometric sans */
+.resume-section--intro .resume h1 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
   margin: 0 0 0.35em;
-  line-height: 1.15;
+  line-height: 1.08;
 }
 
 .resume h1 + p {
@@ -98,8 +137,8 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.resume h2:first-of-type {
-  margin-top: 1.5rem;
+.resume-section:not(.resume-section--intro) .resume h2:first-of-type {
+  margin-top: 0;
 }
 
 .resume h3 {
@@ -159,4 +198,17 @@ body {
 .resume em {
   font-style: italic;
   color: #d8dce3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  .resume-section {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
