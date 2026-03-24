@@ -38,17 +38,42 @@ body {
 
 body {
   min-height: 100svh;
-  background: radial-gradient(1200px 600px at 10% -10%, #1a2234 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #152028 0%, transparent 50%), var(--bg);
+  background: #05070d;
 }
 
 #root {
   height: 100%;
   min-height: 100%;
+  position: relative;
+}
+
+/* Fixed nebula + canvas stars (see SpaceBackdrop.tsx) */
+.space-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 120% 90% at 50% 115%, rgba(45, 70, 140, 0.35) 0%, transparent 52%),
+    radial-gradient(ellipse 100% 70% at 8% 8%, rgba(90, 130, 210, 0.14) 0%, transparent 42%),
+    radial-gradient(ellipse 80% 60% at 92% 25%, rgba(70, 110, 180, 0.12) 0%, transparent 38%),
+    radial-gradient(ellipse 60% 45% at 70% 85%, rgba(100, 60, 140, 0.08) 0%, transparent 45%),
+    #05070d;
+}
+
+.space-backdrop__stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* Scroll container: one “screen” per section with snap */
 .page {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 5vh, 3.5rem);

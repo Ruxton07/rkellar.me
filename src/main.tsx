@@ -4,10 +4,12 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import './index.css'
 import App from './App.tsx'
+import { SpaceBackdrop } from './SpaceBackdrop.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <>
+      <SpaceBackdrop />
       <App />
       <Analytics />
       <SpeedInsights />
