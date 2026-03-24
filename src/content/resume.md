@@ -34,6 +34,15 @@ West Lafayette, IN · Aug 2025 – Present
 
 ## Experience
 
+### FIRST Robotics — Mentor & volunteer referee
+
+West Lafayette, IN · Aug 2025 – Present
+
+- Mentor **FIRST Robotics Competition** team **1646** (FRC) and **FIRST Tech Challenge** teams **8272** and **32814** (FTC): recurring support on **mechanical design, programming, CAD, prototyping, and match strategy** with high school students.
+- Coach students through **design reviews, debugging, and iteration** so they can own their robot systems and develop **structured problem-solving** habits relevant to software and engineering work.
+- Coordinate with **lead coaches and volunteers** to align technical goals with **season milestones** and competition readiness.
+- Volunteer **referee** at **FRC**, **FTC**, and **FIRST LEGO League** (FLL) events: interpret and apply the **game manuals** fairly, support **field and match flow**, and help competitions stay **safe, consistent, and on schedule** for teams and families.
+
 ### FRC Robotics — Electronics & media subteam lead
 
 Austin, TX · Aug 2023 – May 2025
@@ -64,14 +73,6 @@ Austin, TX · Sep 2023 – May 2025
 
 - **Hardened Windows and Windows Server** competition images: **vulnerability triage**, **least-privilege** accounts, service hardening, and **firewall** policy—working accurately under time pressure.
 - Contributed to team strategy and execution that reached **Platinum Division National Semifinalists** **two consecutive years**.
-
-### FIRST Robotics — Mentor
-
-West Lafayette, IN · Aug 2025 – Present
-
-- Mentor **FIRST Robotics Competition** team **1646** (FRC) and **FIRST Tech Challenge** teams **8272** and **32814** (FTC): recurring support on **mechanical design, programming, CAD, prototyping, and match strategy** with high school students.
-- Coach students through **design reviews, debugging, and iteration** so they can own their robot systems and develop **structured problem-solving** habits relevant to software and engineering work.
-- Coordinate with **lead coaches and volunteers** to align technical goals with **season milestones** and competition readiness.
 
 ---
 
