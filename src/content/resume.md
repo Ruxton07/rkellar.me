@@ -1,6 +1,7 @@
 # Ryan Kellar
 
-**West Lafayette, IN** · [rkellar@purdue.edu](mailto:rkellar@purdue.edu) · +1 (737) 226-9300  
+**West Lafayette, IN**  
+[rkellar@purdue.edu](mailto:rkellar@purdue.edu) · +1 (737) 226-9300  
 [LinkedIn](https://www.linkedin.com/in/ryan-kellar-cs) · [GitHub](https://github.com/Ruxton07)
 
 ---
